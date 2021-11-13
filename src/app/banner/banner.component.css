@@ -1,0 +1,27 @@
+.study{
+    position:relative;
+  animation-name: teste;
+  animation-duration: 2s;
+  
+}
+@keyframes teste{
+    from{
+      left:-100%;
+    }
+    to{
+       left:0%;
+    }
+}
+.study-letter{
+  animation-name: teste2;
+  animation-duration: 3s;
+  
+}
+@keyframes teste2{
+    from{
+      opacity: 0%;
+    }
+    to{
+       opacity: 100%;
+    }
+}
