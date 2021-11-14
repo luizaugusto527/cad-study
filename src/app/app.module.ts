@@ -3,16 +3,26 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { BannerComponent } from './banner/banner.component';
+import { RegisterComponent } from './register/register.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
-    BannerComponent
+    BannerComponent,
+    RegisterComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot([{
+      path:'',component:BannerComponent, pathMatch:'full'
+    },{
+      path:'register',component:RegisterComponent
+    }
+  
+  ])
   ],
   providers: [],
   bootstrap: [AppComponent]
