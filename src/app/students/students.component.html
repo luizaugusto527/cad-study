@@ -1,1 +1,22 @@
-<p>students works!</p>
+<h2 class="my-5">Estudantes</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Curso</th>
+            <th>Semestre</th>
+            <th>Cidade</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let student of students">
+            <td>{{student.nome}}</td>
+            <td>{{student.idade}}</td>
+            <td>{{student.curso}}</td>
+            <td>{{student.semestre}}</td>
+            <td>{{student.cidade}}</td>
+           
+        </tr>
+    </tbody>
+  </table>
