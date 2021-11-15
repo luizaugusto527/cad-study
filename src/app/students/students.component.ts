@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Student } from './student';
+import { StudentsListService } from './students-list.service';
 
 @Component({
   selector: 'app-students',
@@ -7,35 +8,13 @@ import { Student } from './student';
   styleUrls: ['./students.component.css']
 })
 export class StudentsComponent implements OnInit {
-  students:Student[] = [{
-    nome:"Luiz",
-    idade:27,
-    curso:"Análise e desenvolvimento de sistemas",
-    semestre:"3°",
-    cidade:"Sorocaba"
-
-  },
-  {
-    nome:"Maria",
-    idade:18,
-    curso:"Psicologia",
-    semestre:"5°",
-    cidade:"Itu"
-
-  },
-  {
-    nome:"Rodrigo",
-    idade:23,
-    curso:"Engenharia Elétrica",
-    semestre:"4°",
-    cidade:"Sorocaba"
-
-  }
-
-]
-  constructor() { }
-
+  constructor(public student:StudentsListService) { }
+  students:Student[] = []
+  
+  
+  
   ngOnInit(): void {
+    this.students= this.student.getstudentsList()
   }
 
 }

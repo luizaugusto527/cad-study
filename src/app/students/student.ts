@@ -3,5 +3,6 @@ export interface Student {
     idade:number,
     curso:string,
     semestre:string,
-    cidade:string
+    cidade:string,
+    email:string
 }
