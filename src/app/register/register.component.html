@@ -1,35 +1,74 @@
 <div class="container my-5">
-    <form class="col-lg-6">
+    <form class="col-lg-6" [formGroup] = "studentForm">
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="inputName">Nome</label>
-            <input type="email" class="form-control" id="inputName" placeholder="Email">
+            <input type="type" class="form-control" id="inputName" placeholder="Nome" formControlName = "nome">
+            <ng-container *ngIf="studentForm.controls.nome.touched">
+
+              <span class="text-danger" *ngIf="studentForm.controls.nome.errors">
+                Campo obrigatório
+              </span>
+            </ng-container>
           </div>
           <div class="form-group col-md-6">
             <label for="inputAge">Idade</label>
-            <input type="number" class="form-control" id="inputAge" placeholder="idade" min="0">
+            <input type="number" class="form-control" id="inputAge" placeholder="idade" min="0" formControlName = "idade">
+            <ng-container *ngIf="studentForm.controls.idade.touched">
+
+              <span class="text-danger" *ngIf="studentForm.controls.idade.errors">
+                Campo obrigatório
+              </span>
+            </ng-container>
           </div>
         </div>
         <div class="form-group">
           <label for="inputEmail">Email</label>
-          <input type="email" class="form-control" id="inputEmail" placeholder="Digite o e-mail">
+          <input type="email" class="form-control" id="inputEmail" placeholder="Digite o e-mail" formControlName = "email">
+          <ng-container *ngIf="studentForm.controls.email.touched">
+
+            <span class="text-danger" *ngIf="studentForm.controls.email.errors?.required">
+              Campo obrigatório
+            </span>
+            <span class="text-danger" *ngIf="studentForm.controls.email.errors?.email">
+              E-mail inválido
+            </span>
+          </ng-container>
         </div>
         <div class="form-group">
           <label for="inputCourse">Curso</label>
-          <input type="text" class="form-control" id="inputCourse" placeholder="Digite o curso">
+          <input type="text" class="form-control" id="inputCourse" placeholder="Digite o curso" formControlName = "curso">
+          <ng-container *ngIf="studentForm.controls.curso.touched">
+
+            <span class="text-danger" *ngIf="studentForm.controls.curso.errors">
+              Campo obrigatório
+            </span>
+          </ng-container>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
               <label for="inputSemester">Semestre</label>
-              <input type="number" class="form-control" id="inputSemester" placeholder="Digite o semestre">
+              <input type="number" class="form-control" id="inputSemester" placeholder="Digite o semestre" formControlName = "semestre">
+              <ng-container *ngIf="studentForm.controls.semestre.touched">
+
+                <span class="text-danger" *ngIf="studentForm.controls.semestre.errors">
+                  Campo obrigatório
+                </span>
+              </ng-container>
               
             </div>
           <div class="form-group col-md-6">
             <label for="inputCity">Cidade</label>
-            <input type="text" class="form-control" id="inputCity">
+            <input type="text" class="form-control" id="inputCity" formControlName = "cidade" placeholder="Digite a cidade">
+            <ng-container *ngIf="studentForm.controls.cidade.touched">
+
+              <span class="text-danger" *ngIf="studentForm.controls.cidade.errors">
+                Campo obrigatório
+              </span>
+            </ng-container>
           </div>
         </div>
-        <button type="submit" class="btn btn-primary" (click) = "register()">Cadastrar</button>
+        <button type="submit" class="btn btn-primary" (click) = "register()" [disabled] = "!studentForm.valid">Cadastrar</button>
       </form>
 
 </div>

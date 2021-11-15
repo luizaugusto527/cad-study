@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Student } from '../students/student';
 import { StudentsListService } from '../students/students-list.service';
+import { FormGroup,FormBuilder,Validators, EmailValidator } from '@angular/forms';
 
 
 
@@ -9,16 +10,25 @@ import { StudentsListService } from '../students/students-list.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  studentForm!:FormGroup
 
-
-  constructor(public student: StudentsListService) { }
+  constructor(public student: StudentsListService,private formBuilder:FormBuilder) {
+    this.studentForm = this.formBuilder.group({
+      nome:['',Validators.required],
+      idade:['',Validators.required],
+      email:['',[Validators.required,Validators.email]],
+      curso:['',Validators.required],
+      semestre:['',Validators.required],
+      cidade:['',Validators.required]
+    })
+   }
 
   ngOnInit(): void {
 
   }
   register(): boolean {
-    let teste1 = { nome: "teste", idade: 200, curso: "ADS", cidade: "Sorocaba", email: "teste@teste", semestre: '1' }
-    this.student.setstudentList(teste1)
+    const registerStudent = this.studentForm.value
+    this.student.setstudentList(registerStudent)
     return false
   }
 

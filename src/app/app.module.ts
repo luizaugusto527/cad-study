@@ -6,6 +6,7 @@ import { BannerComponent } from './banner/banner.component';
 import { RegisterComponent } from './register/register.component';
 import { RouterModule } from '@angular/router';
 import { StudentsComponent } from './students/students.component';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -18,6 +19,8 @@ import { StudentsComponent } from './students/students.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([{
       path:'',component:BannerComponent, pathMatch:'full'
     },{
