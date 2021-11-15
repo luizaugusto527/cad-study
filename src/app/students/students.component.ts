@@ -15,6 +15,7 @@ export class StudentsComponent implements OnInit {
   
   ngOnInit(): void {
     this.students= this.student.getstudentsList()
+       
   }
 
 }

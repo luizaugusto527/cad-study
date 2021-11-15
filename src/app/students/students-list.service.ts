@@ -9,7 +9,7 @@ export class StudentsListService {
   getstudentsList():Student[]{
     return this.students
   }
-  setstudentList(obj:any){
+  setstudentList(obj:Student){
     this.students.push(obj)
   }
   constructor() { }
