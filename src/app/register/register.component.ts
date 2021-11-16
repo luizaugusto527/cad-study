@@ -11,6 +11,7 @@ import { FormGroup,FormBuilder,Validators, EmailValidator } from '@angular/forms
 })
 export class RegisterComponent implements OnInit {
   studentForm!:FormGroup
+  isAlert = false;
 
   constructor(public student: StudentsListService,private formBuilder:FormBuilder) {
     this.studentForm = this.formBuilder.group({
@@ -29,7 +30,15 @@ export class RegisterComponent implements OnInit {
   register(): boolean {
     const registerStudent = this.studentForm.value
     this.student.setstudentList(registerStudent)
+    this.studentForm.reset()
+    this.confirmed();
     return false
   }
-
+  confirmed(){
+    this.isAlert = true
+    setTimeout(() => {
+       this.isAlert = false
+     }, 1000);
+  }
+  
 }

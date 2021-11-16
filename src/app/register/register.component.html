@@ -1,4 +1,7 @@
 <div class="container my-5">
+  <div class="alert alert-success" role="alert" *ngIf = "isAlert" >
+    Estudante cadastrado com sucesso!
+  </div>
     <form class="col-lg-6" [formGroup] = "studentForm">
         <div class="form-row">
           <div class="form-group col-md-6">
@@ -70,5 +73,6 @@
         </div>
         <button type="submit" class="btn btn-primary" (click) = "register()" [disabled] = "!studentForm.valid">Cadastrar</button>
       </form>
+  
 
 </div>
