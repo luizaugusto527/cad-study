@@ -9,12 +9,20 @@ import { StudentsListService } from './students-list.service';
 })
 export class StudentsComponent implements OnInit {
   constructor(public student:StudentsListService) { }
-  students:Student[] = []
+  students:Student[] =[]
+  isEmpty:boolean = false
   
   
   
   ngOnInit(): void {
-    this.students= this.student.getstudentsList()
+    this.student.getstudentsList().subscribe({
+      next:studentList =>{
+        this.students = studentList
+        if (this.students.length == 0) {
+          this.isEmpty = true
+        }
+      }
+    })
        
   }
 

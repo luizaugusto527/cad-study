@@ -1,0 +1,12 @@
+{
+    "students": [
+      { "nome": "Luiz", 
+        "idade": 27, 
+        "curso": "Análise e desenvolvimento de sistemas",
+        "semestre":"3°",
+        "cidade":"Sorocaba",
+        "email": "luiz@gmail.com"
+    }
+    ]
+  }
+
