@@ -1,9 +1,10 @@
 {
     "students": [
-      { "nome": "Luiz", 
+      { 
+        "nome": "Luiz", 
         "idade": 27, 
         "curso": "Análise e desenvolvimento de sistemas",
-        "semestre":"3°",
+        "semestre":"3",
         "cidade":"Sorocaba",
         "email": "luiz@gmail.com"
     }

@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { StudentsComponent } from './students/students.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ConcatPipe } from './concat.pipe';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
     NavBarComponent,
     BannerComponent,
     RegisterComponent,
-    StudentsComponent
+    StudentsComponent,
+    ConcatPipe
   ],
   imports: [
     BrowserModule,
