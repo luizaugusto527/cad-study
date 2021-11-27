@@ -4,7 +4,7 @@ import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { BannerComponent } from './banner/banner.component';
 import { RegisterComponent } from './register/register.component';
-import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
 import { StudentsComponent } from './students/students.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
@@ -21,16 +21,7 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot([{
-      path:'',component:BannerComponent, pathMatch:'full'
-    },{
-      path:'register',component:RegisterComponent
-    },
-    {
-      path:'students',component:StudentsComponent
-    }
-  
-  ])
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

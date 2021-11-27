@@ -18,7 +18,12 @@
             <td>{{student.email}}</td>
             <td>{{student.semestre}}</td>
             <td>{{student.cidade}}</td>
-           
+            
         </tr>
     </tbody>
-  </table>
+</table>
+<div class="students-empty text-center my-5" *ngIf="students.length == 0">
+    <h5 class="text-center" >Nenhum estudante cadastrado</h5>
+    <button class="btn btn-primary" [routerLink] = "['/register']">Cadastrar</button>
+    
+</div>

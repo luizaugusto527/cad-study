@@ -10,7 +10,7 @@ import { FormGroup,FormBuilder,Validators, EmailValidator } from '@angular/forms
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  studentForm!:FormGroup
+  studentForm:FormGroup
   isAlert = false;
 
   constructor(public student: StudentsListService,private formBuilder:FormBuilder) {
@@ -30,7 +30,6 @@ export class RegisterComponent implements OnInit {
   register(): boolean {
     const registerStudent = this.studentForm.value
     this.student.setstudentList(registerStudent)
-    this.studentForm.reset()
     this.confirmed();
     return false
   }
@@ -38,7 +37,8 @@ export class RegisterComponent implements OnInit {
     this.isAlert = true
     setTimeout(() => {
        this.isAlert = false
-     }, 1000);
+       this.studentForm.reset()
+     }, 1300);
   }
   
 }
