@@ -1,13 +1,22 @@
 {
-    "students": [
-      { 
-        "nome": "Luiz", 
-        "idade": 27, 
-        "curso": "Análise e desenvolvimento de sistemas",
-        "semestre":"3",
-        "cidade":"Sorocaba",
-        "email": "luiz@gmail.com"
+  "students": [
+    {
+      "nome": "luiz",
+      "idade": 27,
+      "email": "luizaugustotpires@gmail.com",
+      "curso": "Analise e Desenvolvimento de Sistemas",
+      "semestre": 3,
+      "cidade": "Sorocaba",
+      "id": 1
+    },
+    {
+      "nome": "Mariana",
+      "idade": 23,
+      "email": "mariana@gmail.com",
+      "curso": "Psicologia",
+      "semestre": 7,
+      "cidade": "Itu",
+      "id": 2
     }
-    ]
-  }
-
+  ]
+}

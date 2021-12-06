@@ -12,6 +12,7 @@ import { FormGroup,FormBuilder,Validators, EmailValidator } from '@angular/forms
 export class RegisterComponent implements OnInit {
   studentForm:FormGroup
   isAlert = false;
+ 
 
   constructor(public student: StudentsListService,private formBuilder:FormBuilder) {
     this.studentForm = this.formBuilder.group({
@@ -29,7 +30,8 @@ export class RegisterComponent implements OnInit {
   }
   register(): boolean {
     const registerStudent = this.studentForm.value
-    this.student.setstudentList(registerStudent)
+    this.student.setstudentList(registerStudent).subscribe(()=>console.log("Adicionado")
+    )
     this.confirmed();
     return false
   }

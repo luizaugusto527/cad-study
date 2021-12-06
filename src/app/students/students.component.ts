@@ -11,9 +11,6 @@ export class StudentsComponent implements OnInit {
   constructor(public student:StudentsListService) { }
   students:Student[] =[]
   isEmpty:boolean = false
-  
-  
-  
   ngOnInit(): void {
     this.student.getstudentsList().subscribe({
       next:studentList =>{
