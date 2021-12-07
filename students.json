@@ -1,22 +1,31 @@
 {
   "students": [
     {
-      "nome": "luiz",
+      "id": 1,
+      "nome": "Luiz Augusto ",
       "idade": 27,
       "email": "luizaugustotpires@gmail.com",
       "curso": "Análise e Desenvolvimento de sistemas",
       "semestre": 3,
-      "cidade": "Sorocaba",
-      "id": 1
+      "cidade": "Sorocaba"
     },
     {
-      "nome": "Mariana",
+      "id": 2,
+      "nome": "Mariana Barbosa",
       "idade": 17,
       "email": "mariana@gmail.com",
       "curso": "Psicologia",
       "semestre": 7,
-      "cidade": "Sorocaba",
-      "id": 2
+      "cidade": "Salto"
+    },
+    {
+      "id": 3,
+      "nome": "Leticia Oliveira",
+      "idade": 23,
+      "email": "leticia.vidaloca@gmail.com",
+      "curso": "Publicidade  e Propaganda",
+      "semestre": "5",
+      "cidade": "Sorocaba"
     }
   ]
 }

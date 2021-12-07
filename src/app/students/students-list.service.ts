@@ -25,7 +25,10 @@ export class StudentsListService {
      
   }
 
- 
+ updateStudentList(student:Student):Observable<Student>{
+  const updateUrl = `http://localhost:3000/students/${student.id}`
+  return this.http.put<Student>(updateUrl,student,this.httpOptions)
+ }
 
 
 }
