@@ -4,18 +4,18 @@
       "nome": "luiz",
       "idade": 27,
       "email": "luizaugustotpires@gmail.com",
-      "curso": "Analise e Desenvolvimento de Sistemas",
+      "curso": "Análise e Desenvolvimento de sistemas",
       "semestre": 3,
       "cidade": "Sorocaba",
       "id": 1
     },
     {
       "nome": "Mariana",
-      "idade": 23,
+      "idade": 17,
       "email": "mariana@gmail.com",
       "curso": "Psicologia",
       "semestre": 7,
-      "cidade": "Itu",
+      "cidade": "Sorocaba",
       "id": 2
     }
   ]

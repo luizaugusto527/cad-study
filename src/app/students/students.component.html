@@ -1,5 +1,5 @@
-<h2 class="my-5">Estudantes</h2>
-<table class="table table-striped text-center">
+<h2 class="mt-5">Estudantes</h2>
+<table class="table table-striped text-center my-2">
     <thead>
         <tr>
             <th>Nome</th>
@@ -8,6 +8,7 @@
             <th>E-mail</th>
             <th>Semestre</th>
             <th>Cidade</th>
+            <th>Ação</th>
         </tr>
     </thead>
     <tbody>
@@ -18,6 +19,10 @@
             <td>{{student.email}}</td>
             <td>{{student.semestre}}°</td>
             <td>{{student.cidade}}</td>
+            <td>
+                <button class="btn btn-primary  btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" (click) = "edit(student.id)">Editar</button>
+                <button class="btn btn-danger btn-sm mx-3">Excluir</button>
+            </td>
             
         </tr>
     </tbody>
@@ -27,3 +32,95 @@
     <button class="btn btn-primary" [routerLink] = "['/register']">Cadastrar</button>
     
 </div>
+
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Editar estudante</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup] = "studentForm">
+                <div class="mb-3">
+                  <label for="nameStudent" class="form-label">Nome</label>
+                  <input type="text" class="form-control" id="nameStudent"  formControlName = "nome">
+                  <ng-container *ngIf="studentForm.controls.nome.touched">
+
+                    <span class="text-danger" *ngIf="studentForm.controls.nome.errors">
+                      Campo obrigatório
+                    </span>
+                  </ng-container>
+                </div>
+                  <div class="mb-3">
+                    <label for="inputEmail">Email</label>
+                    <input type="email" class="form-control" id="inputEmail"  formControlName = "email">
+                    <ng-container *ngIf="studentForm.controls.email.touched">
+
+                        <span class="text-danger" *ngIf="studentForm.controls.email.errors?.required">
+                          Campo obrigatório
+                        </span>
+                        <span class="text-danger" *ngIf="studentForm.controls.email.errors?.email">
+                          E-mail inválido
+                        </span>
+                      </ng-container>
+                  </div>
+                    <div class="my-3">
+                    <label for="nameStudent" class="form-label">Curso:</label>
+                  <input type="text" class="form-control" id="nameStudent"  formControlName = "curso">
+                  <ng-container *ngIf="studentForm.controls.curso.touched">
+
+                    <span class="text-danger" *ngIf="studentForm.controls.curso.errors">
+                      Campo obrigatório
+                    </span>
+                  </ng-container>
+                </div>
+                <div class="mb-3">
+                    <div class="form-row">
+                        <div class="col-lg-4">
+                            <label for="ageStudent" class="form-label">Idade</label>
+                            <input type="number" class="form-control" id="ageStudent" min="0" formControlName = "idade">
+                            <ng-container *ngIf="studentForm.controls.idade.touched">
+
+                                <span class="text-danger" *ngIf="studentForm.controls.idade.errors">
+                                  Campo obrigatório
+                                </span>
+                            </ng-container>
+                        </div>
+                        <div class="col-lg-4">
+                            <label for="ageStudent" class="form-label">Semestre</label>
+                            <input type="text" class="form-control" id="ageStudent" formControlName = "semestre">
+                            <ng-container *ngIf="studentForm.controls.semestre.touched">
+
+                                <span class="text-danger" *ngIf="studentForm.controls.semestre.errors">
+                                  Campo obrigatório
+                                </span>
+                              </ng-container>
+                        </div>
+                        <div class="col-lg-4">
+                            <label for="ageStudent" class="form-label">Cidade</label>
+                            <input type="text" class="form-control" id="ageStudent" formControlName = "cidade">
+                            <ng-container *ngIf="studentForm.controls.cidade.touched">
+    
+                                <span class="text-danger" *ngIf="studentForm.controls.cidade.errors">
+                                  Campo obrigatório
+                                </span>
+                              </ng-container>
+                        </div>
+                    </div>
+                 
+                  
+                </div>
+ 
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" [disabled] = "!studentForm.valid">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
