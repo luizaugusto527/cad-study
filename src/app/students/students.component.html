@@ -1,4 +1,10 @@
-<h2 class="mt-5">Estudantes</h2>
+<h2 class="mt-5 mb-4">Estudantes</h2>
+<div class="alert alert-success my-3 text-center" role="alert" *ngIf = "isUpdate">
+    Estudante editado com sucesso
+</div>
+<div class="alert alert-danger my-3 text-center" role="alert" *ngIf = "isDelete">
+    Estudante deletado com sucesso
+</div>
 <table class="table table-striped text-center my-2">
     <thead>
         <tr>
@@ -22,7 +28,8 @@
             <td>
                 <button class="btn btn-primary  btn-sm" type="button" data-bs-toggle="modal"
                     data-bs-target="#exampleModal" (click)="edit(student.id)">Editar</button>
-                <button class="btn btn-danger btn-sm mx-3">Excluir</button>
+                <button class="btn btn-danger btn-sm mx-3"  data-bs-toggle="modal"
+                data-bs-target="#deleteModal" (click)="showDeleteStudent(student.id)">Excluir</button>
             </td>
 
         </tr>
@@ -42,7 +49,9 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Editar estudante</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
             </div>
             <div class="modal-body">
                 <form [formGroup]="studentForm">
@@ -120,10 +129,39 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Fechar</button>
                 <button type="button" class="btn btn-primary" [disabled]="!studentForm.valid"
-                    (click)="updateStudent()" data-bs-dismiss="modal">Save changes</button>
+                    (click)="updateStudent()" data-bs-dismiss="modal">Salvar</button>
             </div>
         </div>
     </div>
+    
 </div>
+
+<!-- Delete modal -->
+
+<div class="modal fade" tabindex="-1" role="dialog" id="deleteModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Tem certeza que deseja excluir esse estudante?</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Nome: {{mostra.nome}}</p>
+          <p>Idade: {{mostra.idade}}</p>
+          <p>Curso: {{mostra.curso}}</p>
+          <p>E-mail: {{mostra.email}}</p>
+          <p>Cidade: {{mostra.cidade}}</p>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-danger"(click)="deleteStudent(mostra.id)"  data-bs-dismiss="modal">Excluir</button>
+        </div>
+      </div>
+    </div>
+
+  </div>

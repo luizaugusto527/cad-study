@@ -29,6 +29,10 @@ export class StudentsListService {
   const updateUrl = `http://localhost:3000/students/${student.id}`
   return this.http.put<Student>(updateUrl,student,this.httpOptions)
  }
+ deleteStudent(id:number):Observable<Student>{
+  const deleteUrl = `http://localhost:3000/students/${id}`
+  return this.http.delete<Student>(deleteUrl,this.httpOptions)
+ }
 
 
 }

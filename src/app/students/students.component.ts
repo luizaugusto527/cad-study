@@ -12,7 +12,11 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class StudentsComponent implements OnInit {
   students: Student[] = []
   isEmpty: boolean = false
+  isDelete:boolean = false;
+  isUpdate:boolean = false;
   studentForm: FormGroup;
+
+
   mostra: Student = {
     id: 0,
     nome: "null",
@@ -64,12 +68,39 @@ export class StudentsComponent implements OnInit {
   updateStudent() {
     const editedStudent = this.studentForm.value
     this.student.updateStudentList(editedStudent).subscribe(() => {
-      console.log("Atualizado com sucesso");
-      window.location.reload();
+      this.isUpdate = true;
+      setTimeout(() => {
+        this.isUpdate = false
+        window.location.reload();
+        
+      }, 1100);
 
     }
 
     )
 
   }
+
+  showDeleteStudent(id: number) {
+    this.mostra = this.students.find(name => name.id == id)!;
+ 
+  }
+
+  deleteStudent(id:number){
+    this.student.deleteStudent(id).subscribe(() => {
+      
+      this.isDelete = true;
+      setTimeout(() => {
+        this.isDelete = false
+        window.location.reload();
+        
+      }, 1200);
+     
+
+    }
+
+    )
+  }
+
 }
+

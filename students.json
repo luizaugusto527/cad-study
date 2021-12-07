@@ -1,31 +1,40 @@
 {
   "students": [
     {
-      "id": 1,
-      "nome": "Luiz Augusto ",
+      "nome": "luiz Augusto",
       "idade": 27,
       "email": "luizaugustotpires@gmail.com",
-      "curso": "Análise e Desenvolvimento de sistemas",
+      "curso": "Análise e desenvolvimento de sistemas",
       "semestre": 3,
-      "cidade": "Sorocaba"
+      "cidade": "Sorocaba",
+      "id": 1
     },
     {
-      "id": 2,
-      "nome": "Mariana Barbosa",
-      "idade": 17,
-      "email": "mariana@gmail.com",
+      "nome": "Leticia Mendes",
+      "idade": 27,
+      "email": "leticia.vidaloca@gmail.com",
       "curso": "Psicologia",
       "semestre": 7,
-      "cidade": "Salto"
+      "cidade": "Itu",
+      "id": 2
     },
     {
-      "id": 3,
-      "nome": "Leticia Oliveira",
+      "nome": "Mariana Godoy",
       "idade": 23,
-      "email": "leticia.vidaloca@gmail.com",
-      "curso": "Publicidade  e Propaganda",
-      "semestre": "5",
-      "cidade": "Sorocaba"
+      "email": "mariana@gmail.com",
+      "curso": "Engenharia de Alimentos",
+      "semestre": 2,
+      "cidade": "Salto",
+      "id": 3
+    },
+    {
+      "nome": "Rodrigo Mendes",
+      "idade": 18,
+      "email": "rodrido_lol@gmail.com",
+      "curso": "Direito",
+      "semestre": 6,
+      "cidade": "Sorocaba",
+      "id": 4
     }
   ]
 }
