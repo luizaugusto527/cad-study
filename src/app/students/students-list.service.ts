@@ -13,7 +13,7 @@ export class StudentsListService {
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
-  private url = `http://localhost:3000/students`
+  private url = `http://localhost:8080/students`
   constructor(private http: HttpClient) { }
 
   getstudentsList():Observable<Student[]>{
@@ -26,11 +26,11 @@ export class StudentsListService {
   }
 
  updateStudentList(student:Student):Observable<Student>{
-  const updateUrl = `http://localhost:3000/students/${student.id}`
+  const updateUrl = `http://localhost:8080/students/${student.id}`
   return this.http.put<Student>(updateUrl,student,this.httpOptions)
  }
  deleteStudent(id:number):Observable<Student>{
-  const deleteUrl = `http://localhost:3000/students/${id}`
+  const deleteUrl = `http://localhost:8080/students/${id}`
   return this.http.delete<Student>(deleteUrl,this.httpOptions)
  }
 

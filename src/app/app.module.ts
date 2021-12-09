@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { StudentsComponent } from './students/students.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 
 
@@ -18,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
     BannerComponent,
     RegisterComponent,
     StudentsComponent,
+    ErrorPageComponent,
   ],
   imports: [
     BrowserModule,
