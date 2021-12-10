@@ -11,7 +11,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class StudentsComponent implements OnInit {
   students: Student[] = []
-  isEmpty: boolean = false
+  isEmpty: boolean = true
   isDelete:boolean = false;
   isUpdate:boolean = false;
   studentForm: FormGroup;
@@ -43,7 +43,7 @@ export class StudentsComponent implements OnInit {
       next: studentList => {
         this.students = studentList
         if (this.students.length == 0) {
-          this.isEmpty = true
+          this.isEmpty = false
         }
       }
     })
@@ -71,7 +71,7 @@ export class StudentsComponent implements OnInit {
       this.isUpdate = true;
       setTimeout(() => {
         this.isUpdate = false
-        window.location.reload();
+        this.ngOnInit();
         
       }, 1100);
 
@@ -92,7 +92,7 @@ export class StudentsComponent implements OnInit {
       this.isDelete = true;
       setTimeout(() => {
         this.isDelete = false
-        window.location.reload();
+        this.ngOnInit();
         
       }, 1200);
      
